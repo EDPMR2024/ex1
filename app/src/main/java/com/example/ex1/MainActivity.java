@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
         refBtnOK= findViewById(R.id.button);
         refEdtNom= findViewById(R.id.edtNom);
+
         refBtnOK.setOnClickListener(this);
         refEdtNom.setOnClickListener(this);
     /*
@@ -79,11 +80,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        // alerter(Integer.toString(view.getId()));
+        // NB: on ne peut plus utiliser switch car les identifiants ne sont pas des constantes
+        // https://stackoverflow.com/questions/51401999/how-to-solve-error-resource-ids-cannot-be-used-in-switch-statement-in-android
         if (view.getId() == R.id.edtNom) {
-            alerter("click sur edt");
+            //alerter("click sur edt");
         } else if (view.getId() == R.id.button) {
-            alerter("click sur bouton");
+            alerter("contenu : " + refEdtNom.getText().toString());
+            // TODO: afficher le contenu de l'edit Text lors du clic
+            // TODO: sur le bouton
+            // TODO: Cf.
 
         }
 
