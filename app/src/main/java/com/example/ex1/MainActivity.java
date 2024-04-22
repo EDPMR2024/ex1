@@ -1,5 +1,6 @@
 package com.example.ex1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -62,19 +63,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onStart() {
         super.onStart();
-        //alerter("onStart");
+        alerter("onStart");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        //alerter("onRestart");
+        alerter("onRestart");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        //alerter("onResume");
+        alerter("onResume");
     }
 
 
@@ -86,9 +87,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //alerter("click sur edt");
         } else if (view.getId() == R.id.button) {
             alerter("contenu : " + refEdtNom.getText().toString());
-            // TODO: afficher le contenu de l'edit Text lors du clic
-            // TODO: sur le bouton
-            // TODO: Cf.
+            // TODO: changer d'activité lors du clic sur le bouton
+            Intent myIntent;
+            myIntent = new Intent(MainActivity.this,MainActivity2.class);
+            Bundle bdlData = new Bundle();
+            bdlData.putString("pseudo",refEdtNom.getText().toString());
+            myIntent.putExtras(bdlData);
+            startActivity(myIntent);
+
 
         }
 
