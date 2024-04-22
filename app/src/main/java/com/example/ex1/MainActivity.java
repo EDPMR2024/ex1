@@ -1,6 +1,5 @@
 package com.example.ex1;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -80,17 +79,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        alerter(Integer.toString(view.getId()));
-        /*switch(view.getId()) {
-            case R.id.edtNom:
-                alerter("click sur edt");
-                break;
+        // alerter(Integer.toString(view.getId()));
+        if (view.getId() == R.id.edtNom) {
+            alerter("click sur edt");
+        } else if (view.getId() == R.id.button) {
+            alerter("click sur bouton");
 
-            case R.id.button:
-                alerter("click sur bouton");
-                break;
+        }
 
-        }*/
     }
 
     /*
