@@ -2,6 +2,7 @@ package com.example.ex1;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,12 +17,20 @@ public class MainActivity extends AppCompatActivity {
     //  suivant les occurrences du mot-clé "pmr2024"
     private static final String PMR = "pmr2024";
 
+    void alerter(String s) {
+        Log.i(PMR, s);
+
+        Toast myToast = Toast.makeText(this,s,Toast.LENGTH_LONG);
+        myToast.show();
+
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // TODO: affichage d'un message
-        Log.i(PMR, "onCreate");
+        alerter("onCreate");
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -29,5 +38,23 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        alerter("onStart");
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        alerter("onRestart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        alerter("onResume");
     }
 }
