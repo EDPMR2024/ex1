@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Ex1</string>
+    <string name="helloapp">Hello App !</string>
+    <string name="nom">Nom :</string>
+    <string name="entrez_votre_nom">Entrez votre nom</string>
+    <string name="ok">OK</string>
 </resources>

@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF9800"
+    android:background="?android:attr/colorActivatedHighlight"
     tools:context=".MainActivity">
 
     <TextView
@@ -18,8 +18,8 @@
         android:height="50dp"
         android:background="#000000"
         android:gravity="center"
-        android:text="Hello App !"
-        android:textColor="#FFEB3B"
+        android:text="@string/helloapp"
+        android:textColor="@color/jaune"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +32,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:gravity="center"
-        android:text="Nom :"
+        android:text="@string/nom"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/editTextText"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,10 +49,11 @@
         android:ems="10"
         android:inputType="text"
         android:padding="3dp"
-        android:text="Entrez votre nom"
+        android:text=""
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:autofillHints="@string/entrez_votre_nom" />
 
     <Button
         android:id="@+id/button"
@@ -60,7 +61,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="OK"
+        android:text="@string/ok"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextText" />
 </androidx.constraintlayout.widget.ConstraintLayout>
